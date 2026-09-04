@@ -146,6 +146,14 @@ def run_daily_check():
                 print(line)
                 summary_lines.append(line)
                 positions[symbol] = None
+            else:
+                pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
+                risk_distance = abs(entry - stop)
+                r_multiple = pnl_distance / risk_distance if risk_distance != 0 else 0
+                line = (f"[{symbol}] {side} ancora aperta @ {current_price:.4f} "
+                        f"(entrata: {entry:.4f} | {r_multiple:+.2f}R)")
+                print(line)
+                summary_lines.append(line)
             continue
 
         decision = strategy_core.evaluate(candles)
