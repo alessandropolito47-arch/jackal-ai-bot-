@@ -1,16 +1,8 @@
 {
-  "capital": 9989.798673782456,
+  "capital": 9993.006509807004,
   "positions": {
     "BTC/USDT": null,
     "ETH/USDT": null,
-    "BNB/USDT": {
-      "side": "BUY",
-      "entry_price": 713.8599853515625,
-      "stop_price": 718.3148980912001,
-      "take_profit_price": 770.417354461019,
-      "risk_amount": 3.780560532756923,
-      "opened_at": "2026-09-04T08:05:39.969800+00:00",
-      "extreme_price": 720.1300048828125
-    }
+    "BNB/USDT": null
   }
 }
