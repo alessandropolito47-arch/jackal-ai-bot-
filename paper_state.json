@@ -1,28 +1,12 @@
 {
-  "capital": 10000.0,
+  "capital": 9989.798673782456,
   "positions": {
-    "BTC/USDT": {
-      "side": "BUY",
-      "entry_price": 80517.8203125,
-      "stop_price": 78852.8412676148,
-      "take_profit_price": 87555.7771610778,
-      "risk_amount": 3.7540755190424298,
-      "opened_at": "2026-09-04T08:05:38.953804+00:00",
-      "extreme_price": 81123.21875
-    },
-    "ETH/USDT": {
-      "side": "BUY",
-      "entry_price": 2503.110107421875,
-      "stop_price": 2438.709823145233,
-      "take_profit_price": 2779.9339225087133,
-      "risk_amount": 3.816580656488955,
-      "opened_at": "2026-09-04T08:05:39.255319+00:00",
-      "extreme_price": 2527.139892578125
-    },
+    "BTC/USDT": null,
+    "ETH/USDT": null,
     "BNB/USDT": {
       "side": "BUY",
       "entry_price": 713.8599853515625,
-      "stop_price": 700.8550848189561,
+      "stop_price": 705.7950872603624,
       "take_profit_price": 770.417354461019,
       "risk_amount": 3.780560532756923,
       "opened_at": "2026-09-04T08:05:39.969800+00:00",
