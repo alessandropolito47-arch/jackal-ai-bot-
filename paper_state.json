@@ -6,21 +6,21 @@
     "BNB/USDT": {
       "side": "BUY",
       "entry_price": 718.4199829101562,
-      "stop_price": 681.0633890879293,
+      "stop_price": 682.1533549082418,
       "take_profit_price": 775.894906602481,
       "risk_amount": 3.7176043040457354,
       "initial_risk_distance": 38.316615794883205,
-      "extreme_price": 719.3800048828125,
+      "extreme_price": 720.469970703125,
       "opened_at": "2026-09-04T22:10:44.427992+00:00"
     },
     "NEAR/USDT": {
       "side": "BUY",
       "entry_price": 2.1201000213623047,
-      "stop_price": 1.8756311112230062,
+      "stop_price": 1.9230311089341878,
       "take_profit_price": 2.512903426053369,
       "risk_amount": 3.8080103409476163,
       "initial_risk_distance": 0.26186893646070963,
-      "extreme_price": 2.137500047683716,
+      "extreme_price": 2.1849000453948975,
       "opened_at": "2026-09-04T22:10:50.354912+00:00"
     },
     "ICP/USDT": {
