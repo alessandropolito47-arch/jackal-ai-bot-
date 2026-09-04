@@ -1,0 +1,38 @@
+name: The Jackal AI Bot - Sorveglianza Intraday
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  intraday-monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il codice del repository
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa le librerie necessarie
+        run: pip install yfinance requests
+
+      - name: Sorveglia le posizioni aperte
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python intraday_monitor.py
+
+      - name: Salva lo stato aggiornato nel repository
+        run: |
+          git config user.name "The Jackal AI Bot"
+          git config user.email "bot@thejackalai.local"
+          git add paper_state.json
+          git commit -m "Sorveglianza intraday $(date -u +'%Y-%m-%d %H:%M')" || echo "Nessuna modifica da salvare"
+          git push
