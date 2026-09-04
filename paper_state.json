@@ -4,7 +4,7 @@
     "BTC/USDT": {
       "side": "BUY",
       "entry_price": 80517.8203125,
-      "stop_price": 77036.6459551148,
+      "stop_price": 77642.0443926148,
       "take_profit_price": 87555.7771610778,
       "risk_amount": 3.7540755190424298,
       "opened_at": "2026-09-04T08:05:38.953804+00:00",
@@ -13,7 +13,7 @@
     "ETH/USDT": {
       "side": "BUY",
       "entry_price": 2503.110107421875,
-      "stop_price": 2366.620467676483,
+      "stop_price": 2390.650252832733,
       "take_profit_price": 2779.9339225087133,
       "risk_amount": 3.816580656488955,
       "opened_at": "2026-09-04T08:05:39.255319+00:00",
@@ -22,7 +22,7 @@
     "BNB/USDT": {
       "side": "BUY",
       "entry_price": 713.8599853515625,
-      "stop_price": 686.0350774947374,
+      "stop_price": 690.9750799361436,
       "take_profit_price": 770.417354461019,
       "risk_amount": 3.780560532756923,
       "opened_at": "2026-09-04T08:05:39.969800+00:00",
