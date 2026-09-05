@@ -26,11 +26,11 @@
     "ICP/USDT": {
       "side": "BUY",
       "entry_price": 2.4677000045776367,
-      "stop_price": 2.231604993158101,
+      "stop_price": 2.2562050221498002,
       "take_profit_price": 2.850942343751313,
       "risk_amount": 3.752529587995625,
       "initial_risk_distance": 0.25549489278245074,
-      "extreme_price": 2.4870998859405518,
+      "extreme_price": 2.511699914932251,
       "opened_at": "2026-09-04T22:10:51.509415+00:00"
     }
   }
