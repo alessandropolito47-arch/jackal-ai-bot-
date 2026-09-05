@@ -23,6 +23,16 @@
       "initial_risk_distance": 0.25549489278245074,
       "extreme_price": 2.710400104522705,
       "opened_at": "2026-09-04T22:10:51.509415+00:00"
+    },
+    "SOL/USDT": {
+      "side": "BUY",
+      "entry_price": 103.68000030517578,
+      "stop_price": 94.68374896247579,
+      "take_profit_price": 117.17437731922577,
+      "risk_amount": 3.28744906100428,
+      "initial_risk_distance": 8.996251342699992,
+      "extreme_price": 103.68000030517578,
+      "opened_at": "2026-09-05T22:10:26.275469+00:00"
     }
   }
 }
