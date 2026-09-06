@@ -17,21 +17,21 @@
     "ICP/USDT": {
       "side": "BUY",
       "entry_price": 2.4677000045776367,
-      "stop_price": 2.4549052117402543,
+      "stop_price": 2.4573051331574907,
       "take_profit_price": 2.850942343751313,
       "risk_amount": 3.752529587995625,
       "initial_risk_distance": 0.25549489278245074,
-      "extreme_price": 2.710400104522705,
+      "extreme_price": 2.7128000259399414,
       "opened_at": "2026-09-04T22:10:51.509415+00:00"
     },
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 103.68000030517578,
-      "stop_price": 94.68374896247579,
+      "stop_price": 94.79374957282735,
       "take_profit_price": 117.17437731922577,
       "risk_amount": 3.28744906100428,
       "initial_risk_distance": 8.996251342699992,
-      "extreme_price": 103.68000030517578,
+      "extreme_price": 103.79000091552734,
       "opened_at": "2026-09-05T22:10:26.275469+00:00"
     }
   }
