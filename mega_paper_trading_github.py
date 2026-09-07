@@ -231,3 +231,19 @@ def run_daily_check():
 
     if open_lines:
         message_parts.append(f"=== POSIZIONI ANCORA APERTE ({open_count}) ===")
+        message_parts.extend(open_lines)
+        message_parts.append("")
+
+    if not new_lines and not closed_lines and not open_lines:
+        message_parts.append("Nessuna posizione aperta e nessun movimento oggi.")
+
+    message = "\n".join(message_parts)
+    print("\n" + "=" * 70)
+    print(message)
+    print("=" * 70)
+
+    send_telegram_message(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, message)
+
+
+if __name__ == "__main__":
+    run_daily_check()
