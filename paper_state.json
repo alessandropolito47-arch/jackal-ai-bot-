@@ -6,11 +6,11 @@
     "BNB/USDT": {
       "side": "BUY",
       "entry_price": 744.280029296875,
-      "stop_price": 702.5369268960264,
+      "stop_price": 704.1269537514952,
       "take_profit_price": 808.889616980179,
       "risk_amount": 3.3904724316222494,
       "initial_risk_distance": 43.07305845553606,
-      "extreme_price": 745.6099853515625,
+      "extreme_price": 747.2000122070312,
       "opened_at": "2026-09-07T07:21:59.513601+00:00"
     },
     "NEAR/USDT": {
@@ -37,21 +37,21 @@
     "ADA/USDT": {
       "side": "BUY",
       "entry_price": 0.21899999678134918,
-      "stop_price": 0.19682630068484588,
+      "stop_price": 0.20004629260722442,
       "take_profit_price": 0.25587555518115096,
       "risk_amount": 2.433324884482863,
       "initial_risk_distance": 0.02458370559986786,
-      "extreme_price": 0.22141000628471375,
+      "extreme_price": 0.22462999820709229,
       "opened_at": "2026-09-07T11:16:46.396388+00:00"
     },
     "AVAX/USDT": {
       "side": "BUY",
       "entry_price": 7.861999988555908,
-      "stop_price": 7.33216168790596,
+      "stop_price": 7.458161615426712,
       "take_profit_price": 8.755757416642647,
       "risk_amount": 2.90238006913458,
       "initial_risk_distance": 0.5958382853911592,
-      "extreme_price": 7.927999973297119,
+      "extreme_price": 8.053999900817871,
       "opened_at": "2026-09-07T11:16:47.086219+00:00"
     }
   }
