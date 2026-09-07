@@ -1,19 +1,6 @@
 """
 PAPER TRADING (MEGA) - Versione automatica per GitHub Actions
 ========================================================================
-Identica alla versione Colab nella logica, ma pensata per girare da
-sola, una volta al giorno, senza intervento umano:
-
-- Lo stato (capitale, posizioni) viene salvato in file nel repository
-  stesso, e GitHub Actions li salva automaticamente (commit) dopo
-  ogni esecuzione - cosi' il giorno dopo si riparte da dove si era
-  arrivati.
-- Il risultato del controllo viene mandato come messaggio Telegram,
-  cosi' lo vedi sul telefono senza dover aprire nulla.
-
-Le chiavi (token Telegram, chat id) vengono lette da variabili
-d'ambiente, impostate come "secrets" su GitHub - non sono mai scritte
-nel codice.
 """
 
 import csv
@@ -130,9 +117,6 @@ def run_daily_check():
             stop = position["stop_price"]
             target = position["take_profit_price"]
 
-            # TRAILING STOP: lo stop segue il prezzo migliore raggiunto da
-            # quando la posizione e' aperta, mantenendo la stessa distanza
-            # di rischio iniziale - ma si sposta SOLO a favore, mai indietro.
             initial_risk_distance = position.get("initial_risk_distance", abs(entry - stop))
             trailing_moved = False
 
@@ -156,9 +140,10 @@ def run_daily_check():
 
             if hit_stop or hit_target:
                 risk_amount = position["risk_amount"]
-                risk_distance = abs(entry - stop)
+                # BUGFIX: usare sempre la distanza di rischio ORIGINALE (non quella
+                # aggiornata dal trailing stop) per calcolare R e P&L.
                 pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
-                r_multiple = pnl_distance / risk_distance if risk_distance != 0 else 0
+                r_multiple = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
                 pnl = risk_amount * r_multiple
                 pct_change = (current_price - entry) / entry * 100 if side == "BUY" else (entry - current_price) / entry * 100
                 capital += pnl
@@ -172,8 +157,7 @@ def run_daily_check():
                 positions[symbol] = None
             else:
                 pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
-                risk_distance_now = abs(entry - stop)
-                r_multiple = pnl_distance / risk_distance_now if risk_distance_now != 0 else 0
+                r_multiple = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
                 pct_change = (current_price - entry) / entry * 100 if side == "BUY" else (entry - current_price) / entry * 100
                 trailing_note = " 🔄 stop aggiornato" if trailing_moved else ""
                 line = (f"[{symbol}] {side} | prezzo: {current_price:.4f} ({pct_change:+.2f}%)\n"
