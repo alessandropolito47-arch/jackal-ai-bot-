@@ -47,11 +47,11 @@
     "AVAX/USDT": {
       "side": "BUY",
       "entry_price": 7.861999988555908,
-      "stop_price": 7.472161554391556,
+      "stop_price": 7.477161668832474,
       "take_profit_price": 8.755757416642647,
       "risk_amount": 2.90238006913458,
       "initial_risk_distance": 0.5958382853911592,
-      "extreme_price": 8.067999839782715,
+      "extreme_price": 8.072999954223633,
       "opened_at": "2026-09-07T11:16:47.086219+00:00"
     }
   }
