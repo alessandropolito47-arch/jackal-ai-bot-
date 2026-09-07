@@ -35,4 +35,5 @@ jobs:
           git config user.email "bot@thejackalai.local"
           git add paper_state.json paper_equity_log.csv paper_decision_log.csv
           git commit -m "Aggiornamento automatico stato bot $(date -u +'%Y-%m-%d')" || echo "Nessuna modifica da salvare"
+          git pull --rebase origin main
           git push
