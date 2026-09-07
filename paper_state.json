@@ -3,7 +3,16 @@
   "positions": {
     "BTC/USDT": null,
     "ETH/USDT": null,
-    "BNB/USDT": null,
+    "BNB/USDT": {
+      "side": "BUY",
+      "entry_price": 744.280029296875,
+      "stop_price": 701.206970841339,
+      "take_profit_price": 808.889616980179,
+      "risk_amount": 3.3904724316222494,
+      "initial_risk_distance": 43.07305845553606,
+      "extreme_price": 744.280029296875,
+      "opened_at": "2026-09-07T07:21:59.513601+00:00"
+    },
     "NEAR/USDT": {
       "side": "BUY",
       "entry_price": 2.1201000213623047,
