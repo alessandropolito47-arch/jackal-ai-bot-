@@ -1,5 +1,5 @@
 {
-  "capital": 10003.624429619491,
+  "capital": 10013.138512835076,
   "positions": {
     "BTC/USDT": null,
     "ETH/USDT": null,
@@ -14,16 +14,7 @@
       "extreme_price": 2.4791998863220215,
       "opened_at": "2026-09-04T22:10:50.354912+00:00"
     },
-    "ICP/USDT": {
-      "side": "BUY",
-      "entry_price": 2.4677000045776367,
-      "stop_price": 2.5565051434571733,
-      "take_profit_price": 2.850942343751313,
-      "risk_amount": 3.752529587995625,
-      "initial_risk_distance": 0.25549489278245074,
-      "extreme_price": 2.812000036239624,
-      "opened_at": "2026-09-04T22:10:51.509415+00:00"
-    },
+    "ICP/USDT": null,
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 103.68000030517578,
