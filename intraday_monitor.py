@@ -12,6 +12,9 @@ infragiornalieri, invece di aspettare il controllo notturno.
 Include anche l'aggiornamento del trailing stop, per coerenza con
 il controllo giornaliero.
 
+Controlla anche le notizie rilevanti (CoinTelegraph) su OGNI
+posizione ancora aperta, non solo al momento dell'apertura.
+
 USO:
     python intraday_monitor.py
 """
@@ -21,6 +24,7 @@ import os
 from datetime import datetime, timezone
 
 import config
+from news_filter import check_important_news
 from telegram_notify import send_telegram_message
 
 STATE_PATH = "paper_state.json"
@@ -66,9 +70,22 @@ def main():
     print(f"Sorveglianza intraday: {len(open_symbols)} posizioni aperte, ore {datetime.now(timezone.utc).isoformat()}")
 
     alerts = []
+    news_alerts = []
 
     for symbol in open_symbols:
         position = positions[symbol]
+
+        currency_code = symbol.split("/")[0]
+        try:
+            news = check_important_news(currency_code)
+            if news:
+                news_text = (f"⚠️ [{symbol}] {len(news)} notizia/e rilevante/i su posizione aperta:\n" +
+                             "\n".join(f"   - {item['title']}" for item in news))
+                print(news_text)
+                news_alerts.append(news_text)
+        except Exception as e:
+            print(f"[{symbol}] Errore nel controllo notizie: {e}")
+
         try:
             current_price = fetch_current_price(symbol)
         except Exception as e:
@@ -84,7 +101,6 @@ def main():
         target = position["take_profit_price"]
         initial_risk_distance = position.get("initial_risk_distance", abs(entry - stop))
 
-        # Aggiorna trailing stop anche qui, per coerenza
         if side == "BUY":
             position["extreme_price"] = max(position.get("extreme_price", entry), current_price)
             trailing_stop = position["extreme_price"] - initial_risk_distance
@@ -103,8 +119,6 @@ def main():
 
         if hit_stop or hit_target:
             risk_amount = position["risk_amount"]
-            # BUGFIX: usare sempre la distanza di rischio ORIGINALE, non quella
-            # aggiornata dal trailing stop.
             pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
             r_multiple = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
             pnl = risk_amount * r_multiple
@@ -124,11 +138,22 @@ def main():
     state["positions"] = positions
     save_state(state)
 
+    message_parts = []
     if alerts:
-        message = "⚡ SORVEGLIANZA INTRADAY - The Jackal AI Bot\n\n" + "\n\n".join(alerts)
+        message_parts.append("⚡ SORVEGLIANZA INTRADAY - The Jackal AI Bot\n")
+        message_parts.extend(alerts)
+
+    if news_alerts:
+        if message_parts:
+            message_parts.append("")
+        message_parts.append("📰 NOTIZIE SU POSIZIONI APERTE\n")
+        message_parts.extend(news_alerts)
+
+    if message_parts:
+        message = "\n\n".join(message_parts)
         send_telegram_message(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, message)
     else:
-        print("Nessuna posizione ha toccato stop o target in questo controllo.")
+        print("Nessuna posizione ha toccato stop o target, nessuna notizia rilevante trovata.")
 
 
 if __name__ == "__main__":
