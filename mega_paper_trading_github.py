@@ -18,7 +18,7 @@ STATE_PATH = f"{STATE_FOLDER}/paper_state.json"
 EQUITY_LOG_PATH = f"{STATE_FOLDER}/paper_equity_log.csv"
 DECISION_LOG_PATH = f"{STATE_FOLDER}/paper_decision_log.csv"
 
-NOTIONAL_CAPITAL_START = 10_000.0
+NOTIONAL_CAPITAL_START = 1_000.0
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -140,8 +140,6 @@ def run_daily_check():
 
             if hit_stop or hit_target:
                 risk_amount = position["risk_amount"]
-                # BUGFIX: usare sempre la distanza di rischio ORIGINALE (non quella
-                # aggiornata dal trailing stop) per calcolare R e P&L.
                 pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
                 r_multiple = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
                 pnl = risk_amount * r_multiple
@@ -233,19 +231,3 @@ def run_daily_check():
 
     if open_lines:
         message_parts.append(f"=== POSIZIONI ANCORA APERTE ({open_count}) ===")
-        message_parts.extend(open_lines)
-        message_parts.append("")
-
-    if not new_lines and not closed_lines and not open_lines:
-        message_parts.append("Nessuna posizione aperta e nessun movimento oggi.")
-
-    message = "\n".join(message_parts)
-    print("\n" + "=" * 70)
-    print(message)
-    print("=" * 70)
-
-    send_telegram_message(TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, message)
-
-
-if __name__ == "__main__":
-    run_daily_check()
