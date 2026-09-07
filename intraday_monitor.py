@@ -84,6 +84,7 @@ def main():
         target = position["take_profit_price"]
         initial_risk_distance = position.get("initial_risk_distance", abs(entry - stop))
 
+        # Aggiorna trailing stop anche qui, per coerenza
         if side == "BUY":
             position["extreme_price"] = max(position.get("extreme_price", entry), current_price)
             trailing_stop = position["extreme_price"] - initial_risk_distance
@@ -102,9 +103,10 @@ def main():
 
         if hit_stop or hit_target:
             risk_amount = position["risk_amount"]
-            risk_distance = abs(entry - stop)
+            # BUGFIX: usare sempre la distanza di rischio ORIGINALE, non quella
+            # aggiornata dal trailing stop.
             pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
-            r_multiple = pnl_distance / risk_distance if risk_distance != 0 else 0
+            r_multiple = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
             pnl = risk_amount * r_multiple
             capital += pnl
             reason = "STOP-LOSS" if hit_stop else "TAKE-PROFIT"
