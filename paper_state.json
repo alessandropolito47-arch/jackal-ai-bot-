@@ -37,11 +37,11 @@
     "ADA/USDT": {
       "side": "BUY",
       "entry_price": 0.21899999678134918,
-      "stop_price": 0.2040162897748117,
+      "stop_price": 0.2056462979954843,
       "take_profit_price": 0.25587555518115096,
       "risk_amount": 2.433324884482863,
       "initial_risk_distance": 0.02458370559986786,
-      "extreme_price": 0.22859999537467957,
+      "extreme_price": 0.23023000359535217,
       "opened_at": "2026-09-07T11:16:46.396388+00:00"
     },
     "AVAX/USDT": {
