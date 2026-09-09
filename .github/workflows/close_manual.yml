@@ -1,0 +1,42 @@
+name: The Jackal AI Bot - Chiusura Manuale
+
+on:
+  workflow_dispatch:
+    inputs:
+      symbol:
+        description: 'Simbolo da chiudere (es. SOL/USDT)'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  close-position:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il codice del repository
+        uses: actions/checkout@v4
+
+      - name: Prepara Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installa le librerie necessarie
+        run: pip install yfinance requests
+
+      - name: Chiudi la posizione manualmente
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python close_position.py "${{ github.event.inputs.symbol }}"
+
+      - name: Salva lo stato aggiornato nel repository
+        run: |
+          git config user.name "The Jackal AI Bot"
+          git config user.email "bot@thejackalai.local"
+          git add paper_state.json
+          git commit -m "Chiusura manuale $(date -u +'%Y-%m-%d %H:%M')" || echo "Nessuna modifica da salvare"
+          git pull --rebase origin main
+          git push
