@@ -49,11 +49,11 @@
     "ATOM/USDT": {
       "side": "BUY",
       "entry_price": 1.843400001525879,
-      "stop_price": 1.6988916181149527,
+      "stop_price": 1.6998915456357047,
       "take_profit_price": 2.1167126621868544,
       "risk_amount": 1.9553226667731636,
       "initial_risk_distance": 0.18220844044065032,
-      "extreme_price": 1.881100058555603,
+      "extreme_price": 1.882099986076355,
       "opened_at": "2026-09-09T22:10:48.996675+00:00"
     }
   }
