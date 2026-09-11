@@ -1,5 +1,5 @@
 {
-  "capital": 1001.3987686303909,
+  "capital": 999.8094716558668,
   "positions": {
     "BTC/USDT": null,
     "ETH/USDT": null,
@@ -37,16 +37,7 @@
       "extreme_price": 1.1598000526428223,
       "opened_at": "2026-09-09T22:10:47.631414+00:00"
     },
-    "ATOM/USDT": {
-      "side": "BUY",
-      "entry_price": 1.843400001525879,
-      "stop_price": 1.6998915456357047,
-      "take_profit_price": 2.1167126621868544,
-      "risk_amount": 1.9553226667731636,
-      "initial_risk_distance": 0.18220844044065032,
-      "extreme_price": 1.882099986076355,
-      "opened_at": "2026-09-09T22:10:48.996675+00:00"
-    },
+    "ATOM/USDT": null,
     "FIL/USDT": {
       "side": "BUY",
       "entry_price": 0.7942000031471252,
