@@ -5,11 +5,11 @@
     "ETH/USDT": {
       "side": "BUY",
       "entry_price": 2515.2099609375,
-      "stop_price": 2331.9681210834674,
+      "stop_price": 2334.1480527240924,
       "take_profit_price": 2801.3077060701116,
       "risk_amount": 2.3088325614827343,
       "initial_risk_distance": 190.7318300884076,
-      "extreme_price": 2522.699951171875,
+      "extreme_price": 2524.8798828125,
       "opened_at": "2026-09-11T22:11:14.166194+00:00"
     },
     "BNB/USDT": null,
