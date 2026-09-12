@@ -47,6 +47,16 @@
       "initial_risk_distance": 0.09479455155828942,
       "extreme_price": 0.8205000162124634,
       "opened_at": "2026-09-10T22:10:30.896022+00:00"
+    },
+    "LTC/USDT": {
+      "side": "BUY",
+      "entry_price": 53.595001220703125,
+      "stop_price": 49.49135758054472,
+      "take_profit_price": 59.75046668094073,
+      "risk_amount": 2.2207287146680432,
+      "initial_risk_distance": 4.103643640158403,
+      "extreme_price": 53.595001220703125,
+      "opened_at": "2026-09-12T22:10:36.327622+00:00"
     }
   }
 }
