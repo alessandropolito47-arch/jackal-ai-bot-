@@ -42,11 +42,11 @@
     "LTC/USDT": {
       "side": "BUY",
       "entry_price": 53.595001220703125,
-      "stop_price": 50.023355261208785,
+      "stop_price": 50.052354589822066,
       "take_profit_price": 59.75046668094073,
       "risk_amount": 2.2207287146680432,
       "initial_risk_distance": 4.103643640158403,
-      "extreme_price": 54.12699890136719,
+      "extreme_price": 54.15599822998047,
       "opened_at": "2026-09-12T22:10:36.327622+00:00"
     }
   }
