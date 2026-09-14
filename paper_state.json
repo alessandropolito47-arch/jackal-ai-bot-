@@ -16,11 +16,11 @@
     "NEAR/USDT": {
       "side": "BUY",
       "entry_price": 2.316800117492676,
-      "stop_price": 2.0459992770107602,
+      "stop_price": 2.0658991221340512,
       "take_profit_price": 2.8133013421666604,
       "risk_amount": 1.9270744647515365,
       "initial_risk_distance": 0.331000816449323,
-      "extreme_price": 2.377000093460083,
+      "extreme_price": 2.396899938583374,
       "opened_at": "2026-09-13T22:11:00.140718+00:00"
     },
     "ICP/USDT": null,
