@@ -20,7 +20,16 @@
     "AVAX/USDT": null,
     "DOT/USDT": null,
     "ATOM/USDT": null,
-    "FIL/USDT": null,
+    "FIL/USDT": {
+      "side": "BUY",
+      "entry_price": 0.8076000213623047,
+      "stop_price": 0.6736287303824726,
+      "take_profit_price": 1.0085569578320528,
+      "risk_amount": 1.7850720515561433,
+      "initial_risk_distance": 0.13397129097983207,
+      "extreme_price": 0.8076000213623047,
+      "opened_at": "2026-09-15T22:11:37.125518+00:00"
+    },
     "LTC/USDT": null
   }
 }
