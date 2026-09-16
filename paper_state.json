@@ -18,7 +18,16 @@
     "SOL/USDT": null,
     "ADA/USDT": null,
     "AVAX/USDT": null,
-    "DOT/USDT": null,
+    "DOT/USDT": {
+      "side": "BUY",
+      "entry_price": 1.0002000331878662,
+      "stop_price": 0.8655027645338687,
+      "take_profit_price": 1.2022459361688627,
+      "risk_amount": 1.8211126734288614,
+      "initial_risk_distance": 0.13469726865399756,
+      "extreme_price": 1.0002000331878662,
+      "opened_at": "2026-09-16T22:11:08.586812+00:00"
+    },
     "ATOM/USDT": null,
     "FIL/USDT": {
       "side": "BUY",
