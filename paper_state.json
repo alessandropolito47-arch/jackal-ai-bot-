@@ -12,22 +12,22 @@
     "DOT/USDT": {
       "side": "BUY",
       "entry_price": 1.0002000331878662,
-      "stop_price": 0.9065027731169375,
+      "stop_price": 0.9267027872313174,
       "take_profit_price": 1.2022459361688627,
       "risk_amount": 1.8211126734288614,
       "initial_risk_distance": 0.13469726865399756,
-      "extreme_price": 1.041200041770935,
+      "extreme_price": 1.061400055885315,
       "opened_at": "2026-09-16T22:11:08.586812+00:00"
     },
     "ATOM/USDT": null,
     "FIL/USDT": {
       "side": "BUY",
       "entry_price": 0.8076000213623047,
-      "stop_price": 0.6894287296195332,
+      "stop_price": 0.6925287075896565,
       "take_profit_price": 1.0085569578320528,
       "risk_amount": 1.7850720515561433,
       "initial_risk_distance": 0.13397129097983207,
-      "extreme_price": 0.8234000205993652,
+      "extreme_price": 0.8264999985694885,
       "opened_at": "2026-09-15T22:11:37.125518+00:00"
     },
     "LTC/USDT": null
