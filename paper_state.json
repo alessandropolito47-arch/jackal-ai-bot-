@@ -1,19 +1,10 @@
 {
-  "capital": 995.6890179915046,
+  "capital": 998.770582792104,
   "positions": {
     "BTC/USDT": null,
     "ETH/USDT": null,
     "BNB/USDT": null,
-    "NEAR/USDT": {
-      "side": "BUY",
-      "entry_price": 2.316800117492676,
-      "stop_price": 2.4555992964657163,
-      "take_profit_price": 2.8133013421666604,
-      "risk_amount": 1.9270744647515365,
-      "initial_risk_distance": 0.331000816449323,
-      "extreme_price": 2.786600112915039,
-      "opened_at": "2026-09-13T22:11:00.140718+00:00"
-    },
+    "NEAR/USDT": null,
     "ICP/USDT": null,
     "SOL/USDT": null,
     "ADA/USDT": null,
