@@ -1,12 +1,39 @@
 {
   "capital": 1001.6024047243003,
   "positions": {
-    "BTC/USDT": null,
-    "ETH/USDT": null,
+    "BTC/USDT": {
+      "side": "BUY",
+      "entry_price": 81352.0,
+      "stop_price": 76731.75949627465,
+      "take_profit_price": 88282.36075558802,
+      "risk_amount": 2.4685460034788522,
+      "initial_risk_distance": 4620.240503725348,
+      "extreme_price": 81352.0,
+      "opened_at": "2026-09-18T22:10:49.280831+00:00"
+    },
+    "ETH/USDT": {
+      "side": "BUY",
+      "entry_price": 2632.419921875,
+      "stop_price": 2427.7863646415685,
+      "take_profit_price": 2939.3702577251474,
+      "risk_amount": 2.2772138054086377,
+      "initial_risk_distance": 204.63355723343147,
+      "extreme_price": 2632.419921875,
+      "opened_at": "2026-09-18T22:10:49.774859+00:00"
+    },
     "BNB/USDT": null,
     "NEAR/USDT": null,
     "ICP/USDT": null,
-    "SOL/USDT": null,
+    "SOL/USDT": {
+      "side": "BUY",
+      "entry_price": 113.47000122070312,
+      "stop_price": 103.8576137093274,
+      "take_profit_price": 127.88858248776673,
+      "risk_amount": 2.108702142245792,
+      "initial_risk_distance": 9.61238751137573,
+      "extreme_price": 113.47000122070312,
+      "opened_at": "2026-09-18T22:10:50.193651+00:00"
+    },
     "ADA/USDT": null,
     "AVAX/USDT": null,
     "DOT/USDT": {
