@@ -23,11 +23,11 @@
     "FIL/USDT": {
       "side": "BUY",
       "entry_price": 0.8076000213623047,
-      "stop_price": 0.774428708161861,
+      "stop_price": 0.775628728475124,
       "take_profit_price": 1.0085569578320528,
       "risk_amount": 1.7850720515561433,
       "initial_risk_distance": 0.13397129097983207,
-      "extreme_price": 0.9083999991416931,
+      "extreme_price": 0.909600019454956,
       "opened_at": "2026-09-15T22:11:37.125518+00:00"
     },
     "LTC/USDT": null
