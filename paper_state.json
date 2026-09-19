@@ -4,11 +4,11 @@
     "BTC/USDT": {
       "side": "BUY",
       "entry_price": 81352.0,
-      "stop_price": 77187.18918377465,
+      "stop_price": 77199.69699627465,
       "take_profit_price": 88282.36075558802,
       "risk_amount": 2.4685460034788522,
       "initial_risk_distance": 4620.240503725348,
-      "extreme_price": 81807.4296875,
+      "extreme_price": 81819.9375,
       "opened_at": "2026-09-18T22:10:49.280831+00:00"
     },
     "ETH/USDT": {
