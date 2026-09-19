@@ -21,7 +21,16 @@
       "extreme_price": 2657.199951171875,
       "opened_at": "2026-09-18T22:10:49.774859+00:00"
     },
-    "BNB/USDT": null,
+    "BNB/USDT": {
+      "side": "BUY",
+      "entry_price": 758.4000244140625,
+      "stop_price": 715.2582676542482,
+      "take_profit_price": 823.1126595537839,
+      "risk_amount": 2.3612417104466874,
+      "initial_risk_distance": 43.14175675981426,
+      "extreme_price": 758.4000244140625,
+      "opened_at": "2026-09-19T22:10:28.461842+00:00"
+    },
     "NEAR/USDT": null,
     "ICP/USDT": null,
     "SOL/USDT": {
