@@ -27,11 +27,11 @@
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 113.47000122070312,
-      "stop_price": 104.05761065756958,
+      "stop_price": 104.17761340415161,
       "take_profit_price": 127.88858248776673,
       "risk_amount": 2.108702142245792,
       "initial_risk_distance": 9.61238751137573,
-      "extreme_price": 113.66999816894531,
+      "extreme_price": 113.79000091552734,
       "opened_at": "2026-09-18T22:10:50.193651+00:00"
     },
     "ADA/USDT": null,
