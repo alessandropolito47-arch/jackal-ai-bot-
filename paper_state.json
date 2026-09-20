@@ -24,11 +24,11 @@
     "BNB/USDT": {
       "side": "BUY",
       "entry_price": 758.4000244140625,
-      "stop_price": 725.4982578886232,
+      "stop_price": 726.8482334745607,
       "take_profit_price": 823.1126595537839,
       "risk_amount": 2.3612417104466874,
       "initial_risk_distance": 43.14175675981426,
-      "extreme_price": 768.6400146484375,
+      "extreme_price": 769.989990234375,
       "opened_at": "2026-09-19T22:10:28.461842+00:00"
     },
     "NEAR/USDT": null,
