@@ -4,21 +4,21 @@
     "BTC/USDT": {
       "side": "BUY",
       "entry_price": 81352.0,
-      "stop_price": 78833.75949627465,
+      "stop_price": 79294.93137127465,
       "take_profit_price": 88282.36075558802,
       "risk_amount": 2.4685460034788522,
       "initial_risk_distance": 4620.240503725348,
-      "extreme_price": 83454.0,
+      "extreme_price": 83915.171875,
       "opened_at": "2026-09-18T22:10:49.280831+00:00"
     },
     "ETH/USDT": {
       "side": "BUY",
       "entry_price": 2632.419921875,
-      "stop_price": 2491.6464720634435,
+      "stop_price": 2494.3364134696935,
       "take_profit_price": 2939.3702577251474,
       "risk_amount": 2.2772138054086377,
       "initial_risk_distance": 204.63355723343147,
-      "extreme_price": 2696.280029296875,
+      "extreme_price": 2698.969970703125,
       "opened_at": "2026-09-18T22:10:49.774859+00:00"
     },
     "BNB/USDT": {
@@ -36,11 +36,11 @@
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 113.47000122070312,
-      "stop_price": 105.28761401450318,
+      "stop_price": 105.69761004721802,
       "take_profit_price": 127.88858248776673,
       "risk_amount": 2.108702142245792,
       "initial_risk_distance": 9.61238751137573,
-      "extreme_price": 114.9000015258789,
+      "extreme_price": 115.30999755859375,
       "opened_at": "2026-09-18T22:10:50.193651+00:00"
     },
     "ADA/USDT": null,
@@ -48,11 +48,11 @@
     "DOT/USDT": {
       "side": "BUY",
       "entry_price": 1.0002000331878662,
-      "stop_price": 1.0298027294386538,
+      "stop_price": 1.0430027740706118,
       "take_profit_price": 1.2022459361688627,
       "risk_amount": 1.8211126734288614,
       "initial_risk_distance": 0.13469726865399756,
-      "extreme_price": 1.1644999980926514,
+      "extreme_price": 1.1777000427246094,
       "opened_at": "2026-09-16T22:11:08.586812+00:00"
     },
     "ATOM/USDT": null,
