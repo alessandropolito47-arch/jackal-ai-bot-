@@ -4,31 +4,31 @@
     "BTC/USDT": {
       "side": "BUY",
       "entry_price": 81352.0,
-      "stop_price": 79294.93137127465,
+      "stop_price": 80297.82199627465,
       "take_profit_price": 88282.36075558802,
       "risk_amount": 2.4685460034788522,
       "initial_risk_distance": 4620.240503725348,
-      "extreme_price": 83915.171875,
+      "extreme_price": 84918.0625,
       "opened_at": "2026-09-18T22:10:49.280831+00:00"
     },
     "ETH/USDT": {
       "side": "BUY",
       "entry_price": 2632.419921875,
-      "stop_price": 2494.3364134696935,
+      "stop_price": 2535.3364134696935,
       "take_profit_price": 2939.3702577251474,
       "risk_amount": 2.2772138054086377,
       "initial_risk_distance": 204.63355723343147,
-      "extreme_price": 2698.969970703125,
+      "extreme_price": 2739.969970703125,
       "opened_at": "2026-09-18T22:10:49.774859+00:00"
     },
     "BNB/USDT": {
       "side": "BUY",
       "entry_price": 758.4000244140625,
-      "stop_price": 739.3982212675295,
+      "stop_price": 742.2582676542482,
       "take_profit_price": 823.1126595537839,
       "risk_amount": 2.3612417104466874,
       "initial_risk_distance": 43.14175675981426,
-      "extreme_price": 782.5399780273438,
+      "extreme_price": 785.4000244140625,
       "opened_at": "2026-09-19T22:10:28.461842+00:00"
     },
     "NEAR/USDT": null,
@@ -36,11 +36,11 @@
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 113.47000122070312,
-      "stop_price": 105.69761004721802,
+      "stop_price": 106.74761309897583,
       "take_profit_price": 127.88858248776673,
       "risk_amount": 2.108702142245792,
       "initial_risk_distance": 9.61238751137573,
-      "extreme_price": 115.30999755859375,
+      "extreme_price": 116.36000061035156,
       "opened_at": "2026-09-18T22:10:50.193651+00:00"
     },
     "ADA/USDT": null,
@@ -48,11 +48,11 @@
     "DOT/USDT": {
       "side": "BUY",
       "entry_price": 1.0002000331878662,
-      "stop_price": 1.0430027740706118,
+      "stop_price": 1.0527027147520693,
       "take_profit_price": 1.2022459361688627,
       "risk_amount": 1.8211126734288614,
       "initial_risk_distance": 0.13469726865399756,
-      "extreme_price": 1.1777000427246094,
+      "extreme_price": 1.187399983406067,
       "opened_at": "2026-09-16T22:11:08.586812+00:00"
     },
     "ATOM/USDT": null,
