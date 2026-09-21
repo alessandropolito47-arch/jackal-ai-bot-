@@ -1,5 +1,5 @@
 {
-  "capital": 1007.6899791036212,
+  "capital": 1009.0558136086929,
   "positions": {
     "BTC/USDT": {
       "side": "BUY",
@@ -49,18 +49,7 @@
     },
     "ADA/USDT": null,
     "AVAX/USDT": null,
-    "DOT/USDT": {
-      "side": "BUY",
-      "entry_price": 1.0002000331878662,
-      "stop_price": 1.0002000331878662,
-      "take_profit_price": 1.2022459361688627,
-      "risk_amount": 1.8211126734288614,
-      "initial_risk_distance": 0.13469726865399756,
-      "extreme_price": 1.187399983406067,
-      "opened_at": "2026-09-16T22:11:08.586812+00:00",
-      "partial_taken": true,
-      "partial_r_locked": 0.5
-    },
+    "DOT/USDT": null,
     "ATOM/USDT": null,
     "FIL/USDT": null,
     "LTC/USDT": null
