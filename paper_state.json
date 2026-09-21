@@ -52,6 +52,17 @@
     "DOT/USDT": null,
     "ATOM/USDT": null,
     "FIL/USDT": null,
-    "LTC/USDT": null
+    "LTC/USDT": null,
+    "XRP/USDT": {
+      "side": "BUY",
+      "entry_price": 1.555999994277954,
+      "stop_price": 1.4003612998128316,
+      "take_profit_price": 1.7894580359756378,
+      "risk_amount": 5.43378418712037,
+      "initial_risk_distance": 0.15563869446512246,
+      "partial_taken": false,
+      "partial_r_locked": 0.0,
+      "opened_at": "2026-09-21T22:11:05.094177+00:00"
+    }
   }
 }
