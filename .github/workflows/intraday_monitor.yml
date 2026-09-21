@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "The Jackal AI Bot"
           git config user.email "bot@thejackalai.local"
-          git add paper_state.json
+          git add paper_state.json notified_news.json
           git commit -m "Sorveglianza intraday $(date -u +'%Y-%m-%d %H:%M')" || echo "Nessuna modifica da salvare"
           git pull --rebase origin main
           git push
