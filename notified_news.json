@@ -13,5 +13,10 @@
     "title": "Bitcoin long liquidations hit $280M as BTC price dips under $84K",
     "symbol": "BTC/USDT",
     "notified_at": "2026-09-23T15:08:55.465231+00:00"
+  },
+  {
+    "title": "KelpDAO sues LayerZero, CEO over $292M rsETH bridge exploit",
+    "symbol": "ETH/USDT",
+    "notified_at": "2026-09-25T09:09:27.150806+00:00"
   }
 ]
