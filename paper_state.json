@@ -44,7 +44,7 @@
       "take_profit_price": 137.50096999914246,
       "risk_amount": 2.108702142245792,
       "initial_risk_distance": 9.61238751137573,
-      "extreme_price": 122.74842834472656,
+      "extreme_price": 122.86000061035156,
       "opened_at": "2026-09-18T22:10:50.193651+00:00",
       "partial_taken": true,
       "partial_r_locked": 0.5
@@ -58,7 +58,7 @@
       "initial_risk_distance": 0.027697398199194895,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.2547999918460846,
+      "extreme_price": 0.2552199959754944,
       "opened_at": "2026-09-27T20:58:13.202393+00:00"
     },
     "AVAX/USDT": null,
@@ -71,7 +71,7 @@
       "initial_risk_distance": 0.15705535459057574,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.2633999586105347,
+      "extreme_price": 1.271399974822998,
       "opened_at": "2026-09-27T20:58:14.330294+00:00"
     },
     "ATOM/USDT": {
@@ -83,7 +83,7 @@
       "initial_risk_distance": 0.20528177987810103,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.8798999786376953,
+      "extreme_price": 1.882599949836731,
       "opened_at": "2026-09-27T20:58:16.077991+00:00"
     },
     "FIL/USDT": {
@@ -95,7 +95,7 @@
       "initial_risk_distance": 0.1690768461846266,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.1339000463485718,
+      "extreme_price": 1.1354999542236328,
       "opened_at": "2026-09-27T20:58:18.177300+00:00"
     },
     "LTC/USDT": null,
@@ -120,7 +120,7 @@
       "initial_risk_distance": 1.365043679216761,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 14.024999618530273,
+      "extreme_price": 14.039999961853027,
       "opened_at": "2026-09-27T20:58:14.838992+00:00"
     }
   }
