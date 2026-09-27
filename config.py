@@ -1,5 +1,5 @@
 """
-CONFIG (MEGA) - Configurazione per la versione con tutti gli indicatori
+CONFIG (MEGA) - Configurazione allineata all'EA MT5 v3.16 (27/09/2026)
 ============================================================================
 """
 
@@ -37,12 +37,16 @@ TIMEFRAMES = ["1d"]
 DEFAULT_TIMEFRAME = "1d"
 
 RISK_PER_TRADE_PCT = 0.75
-MAX_CONCURRENT_POSITIONS = 5
+MAX_CONCURRENT_POSITIONS = 10   # allineato all'EA MT5 (MaxPosizioniAperte)
 
 ATR_STOP_MULTIPLIER = 2.0
-TAKE_PROFIT_ATR_MULTIPLIER = 5.0
+TAKE_PROFIT_ATR_MULTIPLIER = 5.0   # target finale (5 ATR = 2,5R)
 
-VOLATILITY_SCALE_ENABLED = True
+# Gestione dell'uscita (allineata all'EA MT5 v3.16)
+PARTIAL_TP_R = 1.0     # presa parziale di meta' posizione a +1R
+TRAILING_ATR = 2.0     # dopo la parziale lo stop segue il prezzo a 2 ATR dal massimo
+
+VOLATILITY_SCALE_ENABLED = False   # disattivato: l'EA MT5 e i test usano rischio fisso per trade
 VOLATILITY_LOOKBACK = 50
 VOLATILITY_MIN_SCALE = 0.3
 
@@ -55,6 +59,12 @@ RSI_OVERSOLD = 30
 TREND_FILTER_PERIOD = 100
 
 ADX_MIN_STRENGTH = 20
+
+# Filtri di entrata v3.10 (letti da strategy_core.py)
+USE_MFI = True
+USE_SUPERTREND = True
+USE_ICHIMOKU = True
+ANTI_CHASE_ATR = 3.0
 
 BACKTEST_STARTING_CAPITAL = 1_000.0
 HISTORY_YEARS = 8
