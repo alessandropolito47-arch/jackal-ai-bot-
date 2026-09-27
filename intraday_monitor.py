@@ -1,9 +1,10 @@
 """
-INTRADAY MONITOR - Sorveglianza delle posizioni gia' aperte
-================================================================
-AGGIORNAMENTO: stessa logica di presa di profitto parziale del
-controllo giornaliero. Mantiene anche il controllo notizie (una sola
-volta per titolo, tramite notified_news.json).
+INTRADAY MONITOR - Sorveglianza delle posizioni gia' aperte (ogni 30 minuti)
+================================================================================
+AGGIORNAMENTO 27/09/2026 - stesse regole di uscita dell'EA MT5 v3.16, tramite
+position_manager.py: parziale a +1R con pareggio, poi trailing a 2 ATR dal
+massimo raggiunto, target finale a 5 ATR. Mantiene il controllo notizie
+(una sola volta per titolo, tramite notified_news.json).
 """
 
 import json
@@ -11,13 +12,14 @@ import os
 from datetime import datetime, timezone, timedelta
 
 import config
+import position_manager as pm
 from news_filter import check_important_news
 from telegram_notify import send_telegram_message
 
 STATE_PATH = "paper_state.json"
 NOTIFIED_NEWS_PATH = "notified_news.json"
 NEWS_RETENTION_DAYS = 14
-PARTIAL_TP_R = 1.0
+PARTIAL_TP_R = pm.PARTIAL_TP_R
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -72,54 +74,6 @@ def fetch_current_price(symbol):
     return float(df["Close"].iloc[-1])
 
 
-def check_position(position, current_price):
-    side = position["side"]
-    entry = position["entry_price"]
-    stop = position["stop_price"]
-    target = position["take_profit_price"]
-    initial_risk_distance = position["initial_risk_distance"]
-    risk_amount = position["risk_amount"]
-
-    hit_stop = (current_price <= stop) if side == "BUY" else (current_price >= stop)
-    hit_target = (current_price >= target) if side == "BUY" else (current_price <= target)
-
-    if not position.get("partial_taken", False):
-        pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
-        current_r = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
-
-        if hit_stop:
-            pnl = risk_amount * -1.0
-            return {"action": "close", "pnl": pnl, "reason": "STOP-LOSS", "r_multiple": -1.0}
-
-        if hit_target:
-            reward_distance = abs(target - entry)
-            r_multiple = reward_distance / initial_risk_distance if initial_risk_distance != 0 else 0
-            pnl = risk_amount * r_multiple
-            return {"action": "close", "pnl": pnl, "reason": "TAKE-PROFIT", "r_multiple": r_multiple}
-
-        if current_r >= PARTIAL_TP_R:
-            partial_pnl = risk_amount * PARTIAL_TP_R * 0.5
-            return {"action": "partial", "pnl": partial_pnl, "new_stop": entry}
-
-        return None
-
-    else:
-        hit_breakeven = (current_price <= stop) if side == "BUY" else (current_price >= stop)
-        if hit_breakeven:
-            pnl = 0.0
-            total_r = position.get("partial_r_locked", 0.0)
-            return {"action": "close", "pnl": pnl, "reason": "PAREGGIO (dopo presa parziale)", "r_multiple": total_r}
-
-        if hit_target:
-            reward_distance = abs(target - entry)
-            remaining_r = (reward_distance / initial_risk_distance if initial_risk_distance != 0 else 0) * 0.5
-            pnl = risk_amount * remaining_r
-            total_r = position.get("partial_r_locked", 0.0) + remaining_r
-            return {"action": "close", "pnl": pnl, "reason": "TAKE-PROFIT (meta' residua)", "r_multiple": total_r}
-
-        return None
-
-
 def main():
     state = load_state()
     capital = state["capital"]
@@ -171,7 +125,11 @@ def main():
         if current_price is None:
             continue
 
-        result = check_position(position, current_price)
+        pm.allinea_target(position)
+        pm.aggiorna_trailing(position)
+        result = pm.check_position(position, current_price)
+        if result is None or result["action"] == "partial":
+            pm.aggiorna_estremo(position, current_price)
 
         if result is None:
             continue
