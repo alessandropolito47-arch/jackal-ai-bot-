@@ -1,16 +1,12 @@
 """
 PAPER TRADING (MEGA) - Versione automatica per GitHub Actions
 ========================================================================
-AGGIORNAMENTO: gestione del rischio con PRESA DI PROFITTO PARZIALE,
-validata con backtest su 25 simboli/8 anni (1.815 trade attuale vs
-1.816 trade con presa parziale, entrambi statisticamente significativi).
-
-Meccanismo (sostituisce il trailing stop continuo precedente):
-1. Stop fisso all'apertura (non si muove)
-2. Se il prezzo raggiunge +1R: chiude META' posizione, sposta lo stop
-   della meta' rimanente A PAREGGIO (fisso, non trailing)
-3. La meta' rimanente prosegue verso il target originale o torna al
-   pareggio (mai piu' in perdita da quel momento in poi)
+AGGIORNAMENTO 27/09/2026 - allineato all'EA MT5 v3.16:
+- entrata: 8 voti (con MFI) + filtri SuperTrend, Ichimoku, anti-inseguimento
+  (strategy_core.py v3.10)
+- uscita: parziale a +1R con stop a pareggio, poi TRAILING a 2 ATR dal
+  massimo raggiunto, target finale a 5 ATR (position_manager.py)
+- fino a 10 posizioni contemporanee, rischio fisso 0,75% per trade
 """
 
 import csv
@@ -20,6 +16,7 @@ from datetime import datetime, timezone
 
 import config
 import strategy_core
+import position_manager as pm
 from news_filter import check_important_news
 from telegram_notify import send_telegram_message
 
@@ -29,7 +26,7 @@ EQUITY_LOG_PATH = f"{STATE_FOLDER}/paper_equity_log.csv"
 DECISION_LOG_PATH = f"{STATE_FOLDER}/paper_decision_log.csv"
 
 NOTIONAL_CAPITAL_START = 1_000.0
-PARTIAL_TP_R = 1.0
+PARTIAL_TP_R = pm.PARTIAL_TP_R
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
@@ -90,54 +87,6 @@ def log_decision(symbol, decision, executed, notes=""):
         ])
 
 
-def check_position(position, current_price):
-    side = position["side"]
-    entry = position["entry_price"]
-    stop = position["stop_price"]
-    target = position["take_profit_price"]
-    initial_risk_distance = position["initial_risk_distance"]
-    risk_amount = position["risk_amount"]
-
-    hit_stop = (current_price <= stop) if side == "BUY" else (current_price >= stop)
-    hit_target = (current_price >= target) if side == "BUY" else (current_price <= target)
-
-    if not position.get("partial_taken", False):
-        pnl_distance = (current_price - entry) if side == "BUY" else (entry - current_price)
-        current_r = pnl_distance / initial_risk_distance if initial_risk_distance != 0 else 0
-
-        if hit_stop:
-            pnl = risk_amount * -1.0
-            return {"action": "close", "pnl": pnl, "reason": "STOP-LOSS", "r_multiple": -1.0}
-
-        if hit_target:
-            reward_distance = abs(target - entry)
-            r_multiple = reward_distance / initial_risk_distance if initial_risk_distance != 0 else 0
-            pnl = risk_amount * r_multiple
-            return {"action": "close", "pnl": pnl, "reason": "TAKE-PROFIT", "r_multiple": r_multiple}
-
-        if current_r >= PARTIAL_TP_R:
-            partial_pnl = risk_amount * PARTIAL_TP_R * 0.5
-            return {"action": "partial", "pnl": partial_pnl, "new_stop": entry}
-
-        return None
-
-    else:
-        hit_breakeven = (current_price <= stop) if side == "BUY" else (current_price >= stop)
-        if hit_breakeven:
-            pnl = 0.0
-            total_r = position.get("partial_r_locked", 0.0)
-            return {"action": "close", "pnl": pnl, "reason": "PAREGGIO (dopo presa parziale)", "r_multiple": total_r}
-
-        if hit_target:
-            reward_distance = abs(target - entry)
-            remaining_r = (reward_distance / initial_risk_distance if initial_risk_distance != 0 else 0) * 0.5
-            pnl = risk_amount * remaining_r
-            total_r = position.get("partial_r_locked", 0.0) + remaining_r
-            return {"action": "close", "pnl": pnl, "reason": "TAKE-PROFIT (meta' residua)", "r_multiple": total_r}
-
-        return None
-
-
 def run_daily_check():
     state = load_state()
     capital = state["capital"]
@@ -153,7 +102,7 @@ def run_daily_check():
     news_lines = []
 
     print("=" * 70)
-    print("THE JACKAL AI BOT - PAPER TRADING (MEGA, con presa parziale)")
+    print("THE JACKAL AI BOT - PAPER TRADING (MEGA v3.16: parziale + trailing)")
     print(f"Data controllo: {today}")
     print(f"Capitale simulato attuale: {capital:,.2f}")
     print("=" * 70 + "\n")
@@ -172,7 +121,16 @@ def run_daily_check():
         position = positions.get(symbol)
 
         if position is not None:
-            result = check_position(position, current_price)
+            nuovo_tp = pm.allinea_target(position)
+            if nuovo_tp is not None:
+                partial_lines.append(f"🔧 [{symbol}] target finale allineato a 5 ATR: {nuovo_tp:.4f}")
+            pm.aggiorna_estremo_da_candele(position, candles)
+            nuovo_stop = pm.aggiorna_trailing(position)
+            if nuovo_stop is not None:
+                partial_lines.append(f"🔵 [{symbol}] trailing: stop spostato a {nuovo_stop:.4f}")
+            result = pm.check_position(position, current_price)
+            if result is None or result["action"] == "partial":
+                pm.aggiorna_estremo(position, current_price)
 
             if result is None:
                 pnl_distance = (current_price - position["entry_price"]) if position["side"] == "BUY" else (position["entry_price"] - current_price)
@@ -230,13 +188,14 @@ def run_daily_check():
                     "initial_risk_distance": abs(decision.price - decision.stop_price),
                     "partial_taken": False,
                     "partial_r_locked": 0.0,
+                    "extreme_price": decision.price,
                     "opened_at": datetime.now(timezone.utc).isoformat(),
                 }
                 executed = True
                 emoji = "🟢" if decision.signal == "BUY" else "🔴"
                 line = (f"{emoji} [{symbol}] NUOVA {decision.signal} @ {decision.price:.4f}\n"
                         f"   stop: {decision.stop_price:.4f} | target: {decision.take_profit_price:.4f} | "
-                        f"conferme: {decision.confirmations}/11 | rischio: {risk_amount:.2f}")
+                        f"conferme: {decision.confirmations}/8 | rischio: {risk_amount:.2f}")
                 print(line)
                 new_lines.append(line)
 
@@ -262,7 +221,7 @@ def run_daily_check():
         message_parts.append("")
 
     if partial_lines:
-        message_parts.append("=== PRESE DI PROFITTO PARZIALI ===")
+        message_parts.append("=== PRESE PARZIALI E AGGIORNAMENTI STOP/TARGET ===")
         message_parts.extend(partial_lines)
         message_parts.append("")
 
