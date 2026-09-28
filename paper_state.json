@@ -92,7 +92,7 @@
     "LINK/USDT": {
       "side": "BUY",
       "entry_price": 14.024999618530273,
-      "stop_price": 14.024999618530273,
+      "stop_price": 14.026956519147497,
       "take_profit_price": 17.437608816572176,
       "risk_amount": 7.575826235098619,
       "initial_risk_distance": 1.365043679216761,
