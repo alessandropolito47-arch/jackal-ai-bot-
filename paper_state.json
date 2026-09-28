@@ -58,7 +58,7 @@
       "initial_risk_distance": 0.027697398199194895,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.25586000084877014,
+      "extreme_price": 0.25626999139785767,
       "opened_at": "2026-09-27T20:58:13.202393+00:00"
     },
     "AVAX/USDT": null,
@@ -120,7 +120,7 @@
       "initial_risk_distance": 1.365043679216761,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 14.039999961853027,
+      "extreme_price": 14.065999984741211,
       "opened_at": "2026-09-27T20:58:14.838992+00:00"
     }
   }
