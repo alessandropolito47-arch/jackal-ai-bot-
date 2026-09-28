@@ -18,11 +18,11 @@
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 113.47000122070312,
-      "stop_price": 113.47000122070312,
+      "stop_price": 115.00499072348755,
       "take_profit_price": 137.50096999914246,
       "risk_amount": 2.108702142245792,
       "initial_risk_distance": 9.61238751137573,
-      "extreme_price": 122.86000061035156,
+      "extreme_price": 124.61737823486328,
       "opened_at": "2026-09-18T22:10:50.193651+00:00",
       "partial_taken": true,
       "partial_r_locked": 0.5
@@ -36,7 +36,7 @@
       "initial_risk_distance": 0.027697398199194895,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.25626999139785767,
+      "extreme_price": 0.25916099548339844,
       "opened_at": "2026-09-27T20:58:13.202393+00:00"
     },
     "AVAX/USDT": null,
@@ -49,7 +49,7 @@
       "initial_risk_distance": 0.15705535459057574,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.271399974822998,
+      "extreme_price": 1.2761509418487549,
       "opened_at": "2026-09-27T20:58:14.330294+00:00"
     },
     "ATOM/USDT": {
@@ -61,7 +61,7 @@
       "initial_risk_distance": 0.20528177987810103,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.882599949836731,
+      "extreme_price": 1.9223250150680542,
       "opened_at": "2026-09-27T20:58:16.077991+00:00"
     },
     "FIL/USDT": {
@@ -73,7 +73,7 @@
       "initial_risk_distance": 0.1690768461846266,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.1456999778747559,
+      "extreme_price": 1.1563719511032104,
       "opened_at": "2026-09-27T20:58:18.177300+00:00"
     },
     "LTC/USDT": null,
@@ -100,6 +100,18 @@
       "partial_r_locked": 0.5,
       "extreme_price": 15.392000198364258,
       "opened_at": "2026-09-27T20:58:14.838992+00:00"
+    },
+    "XLM/USDT": {
+      "side": "BUY",
+      "entry_price": 0.22432099282741547,
+      "stop_price": 0.1990149500494622,
+      "take_profit_price": 0.2875860997722986,
+      "risk_amount": 7.608046408926378,
+      "initial_risk_distance": 0.025306042777953258,
+      "partial_taken": false,
+      "partial_r_locked": 0.0,
+      "extreme_price": 0.22432099282741547,
+      "opened_at": "2026-09-28T22:11:39.754764+00:00"
     }
   }
 }
