@@ -1,5 +1,5 @@
 {
-  "capital": 1010.1101646798159,
+  "capital": 1010.2465381934895,
   "positions": {
     "BTC/USDT": {
       "side": "BUY",
@@ -23,18 +23,7 @@
       "extreme_price": 2805.4990234375,
       "opened_at": "2026-09-18T22:10:49.774859+00:00"
     },
-    "BNB/USDT": {
-      "side": "BUY",
-      "entry_price": 758.4000244140625,
-      "stop_price": 763.3833286894045,
-      "take_profit_price": 866.2544163135981,
-      "risk_amount": 2.3612417104466874,
-      "initial_risk_distance": 43.14175675981426,
-      "extreme_price": 806.5250854492188,
-      "opened_at": "2026-09-19T22:10:28.461842+00:00",
-      "partial_taken": true,
-      "partial_r_locked": 0.5
-    },
+    "BNB/USDT": null,
     "NEAR/USDT": null,
     "ICP/USDT": null,
     "SOL/USDT": {
