@@ -98,7 +98,7 @@
       "initial_risk_distance": 1.365043679216761,
       "partial_taken": true,
       "partial_r_locked": 0.5,
-      "extreme_price": 15.392000198364258,
+      "extreme_price": 15.446000099182129,
       "opened_at": "2026-09-27T20:58:14.838992+00:00"
     },
     "XLM/USDT": {
@@ -110,7 +110,7 @@
       "initial_risk_distance": 0.025306042777953258,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.22562700510025024,
+      "extreme_price": 0.23047100007534027,
       "opened_at": "2026-09-28T22:11:39.754764+00:00"
     }
   }
