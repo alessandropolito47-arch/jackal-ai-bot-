@@ -1,5 +1,5 @@
 {
-  "capital": 1010.6182747393011,
+  "capital": 1014.4061878568505,
   "positions": {
     "BTC/USDT": null,
     "ETH/USDT": {
@@ -92,13 +92,13 @@
     "LINK/USDT": {
       "side": "BUY",
       "entry_price": 14.024999618530273,
-      "stop_price": 12.659955939313512,
+      "stop_price": 14.024999618530273,
       "take_profit_price": 17.437608816572176,
       "risk_amount": 7.575826235098619,
       "initial_risk_distance": 1.365043679216761,
-      "partial_taken": false,
-      "partial_r_locked": 0.0,
-      "extreme_price": 15.321000099182129,
+      "partial_taken": true,
+      "partial_r_locked": 0.5,
+      "extreme_price": 15.392000198364258,
       "opened_at": "2026-09-27T20:58:14.838992+00:00"
     }
   }
