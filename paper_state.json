@@ -1,18 +1,7 @@
 {
-  "capital": 1010.2465381934895,
+  "capital": 1010.6182747393011,
   "positions": {
-    "BTC/USDT": {
-      "side": "BUY",
-      "entry_price": 81352.0,
-      "stop_price": 82743.51730877465,
-      "take_profit_price": 92902.60125931338,
-      "risk_amount": 2.4685460034788522,
-      "initial_risk_distance": 4620.240503725348,
-      "extreme_price": 87363.7578125,
-      "opened_at": "2026-09-18T22:10:49.280831+00:00",
-      "partial_taken": true,
-      "partial_r_locked": 0.5
-    },
+    "BTC/USDT": null,
     "ETH/USDT": {
       "side": "BUY",
       "entry_price": 2632.419921875,
