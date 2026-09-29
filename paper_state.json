@@ -92,13 +92,13 @@
     "LINK/USDT": {
       "side": "BUY",
       "entry_price": 14.024999618530273,
-      "stop_price": 14.080956419965368,
+      "stop_price": 14.233956297895055,
       "take_profit_price": 17.437608816572176,
       "risk_amount": 7.575826235098619,
       "initial_risk_distance": 1.365043679216761,
       "partial_taken": true,
       "partial_r_locked": 0.5,
-      "extreme_price": 15.598999977111816,
+      "extreme_price": 15.633000373840332,
       "opened_at": "2026-09-27T20:58:14.838992+00:00"
     },
     "XLM/USDT": {
