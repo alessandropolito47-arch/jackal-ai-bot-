@@ -14,7 +14,18 @@
     },
     "BNB/USDT": null,
     "NEAR/USDT": null,
-    "ICP/USDT": null,
+    "ICP/USDT": {
+      "side": "BUY",
+      "entry_price": 3.453000068664551,
+      "stop_price": 3.0261912812156595,
+      "take_profit_price": 4.520022037286779,
+      "risk_amount": 7.608046408926378,
+      "initial_risk_distance": 0.4268087874488913,
+      "partial_taken": false,
+      "partial_r_locked": 0.0,
+      "extreme_price": 3.453000068664551,
+      "opened_at": "2026-09-29T22:11:25.987349+00:00"
+    },
     "SOL/USDT": {
       "side": "BUY",
       "entry_price": 113.47000122070312,
@@ -49,7 +60,7 @@
       "initial_risk_distance": 0.15705535459057574,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.2761509418487549,
+      "extreme_price": 1.2783770561218262,
       "opened_at": "2026-09-27T20:58:14.330294+00:00"
     },
     "ATOM/USDT": {
@@ -110,7 +121,7 @@
       "initial_risk_distance": 0.025306042777953258,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.23408900201320648,
+      "extreme_price": 0.2342360019683838,
       "opened_at": "2026-09-28T22:11:39.754764+00:00"
     }
   }
