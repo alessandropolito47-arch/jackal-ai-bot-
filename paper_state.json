@@ -23,7 +23,7 @@
       "initial_risk_distance": 0.4268087874488913,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 3.5311999320983887,
+      "extreme_price": 3.5472331047058105,
       "opened_at": "2026-09-29T22:11:25.987349+00:00"
     },
     "SOL/USDT": {
@@ -100,7 +100,18 @@
       "opened_at": "2026-09-21T22:11:05.094177+00:00",
       "extreme_price": 1.6536179780960083
     },
-    "LINK/USDT": null,
+    "LINK/USDT": {
+      "side": "BUY",
+      "entry_price": 14.260000228881836,
+      "stop_price": 12.657682797957142,
+      "take_profit_price": 18.26579380619357,
+      "risk_amount": 7.61310284215383,
+      "initial_risk_distance": 1.6023174309246944,
+      "partial_taken": false,
+      "partial_r_locked": 0.0,
+      "extreme_price": 14.260000228881836,
+      "opened_at": "2026-09-30T22:11:53.678847+00:00"
+    },
     "XLM/USDT": {
       "side": "BUY",
       "entry_price": 0.22432099282741547,
@@ -110,7 +121,7 @@
       "initial_risk_distance": 0.025306042777953258,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.2342360019683838,
+      "extreme_price": 0.23641499876976013,
       "opened_at": "2026-09-28T22:11:39.754764+00:00"
     }
   }
