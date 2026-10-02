@@ -112,6 +112,18 @@
       "partial_r_locked": 0.0,
       "extreme_price": 0.23641499876976013,
       "opened_at": "2026-09-28T22:11:39.754764+00:00"
+    },
+    "ALGO/USDT": {
+      "side": "BUY",
+      "entry_price": 0.12598000466823578,
+      "stop_price": 0.10853610972054475,
+      "take_profit_price": 0.16958974203746333,
+      "risk_amount": 7.556284145390591,
+      "initial_risk_distance": 0.017443894947691024,
+      "partial_taken": false,
+      "partial_r_locked": 0.0,
+      "extreme_price": 0.12598000466823578,
+      "opened_at": "2026-10-02T22:11:03.415158+00:00"
     }
   }
 }
