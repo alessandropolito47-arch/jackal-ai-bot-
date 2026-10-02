@@ -33,5 +33,10 @@
     "title": "Bitget resumes Bitcoin withdrawals as hacker swaps ETH via THORChain",
     "symbol": "ETH/USDT",
     "notified_at": "2026-09-28T11:43:01.633122+00:00"
+  },
+  {
+    "title": "Aave founder says V3 unaffected after third-party adapter exploit drains $305K",
+    "symbol": "ADA/USDT",
+    "notified_at": "2026-10-02T09:42:47.381046+00:00"
   }
 ]
