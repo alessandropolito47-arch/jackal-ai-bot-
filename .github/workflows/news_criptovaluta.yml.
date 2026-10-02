@@ -1,0 +1,23 @@
+name: Rassegna criptovaluta.it
+
+on:
+  schedule:
+    - cron: "0 6 * * *"      # ogni giorno alle 06:00 UTC (08:00 ora italiana)
+  workflow_dispatch:          # avvio manuale dalla scheda Actions
+
+jobs:
+  rassegna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Dipendenze
+        run: pip install requests
+      - name: Invia la rassegna su Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python news_criptovaluta.py
