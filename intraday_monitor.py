@@ -163,13 +163,13 @@ def main():
 
     message_parts = []
     if partial_lines:
-        message_parts.append("⚡ SORVEGLIANZA INTRADAY - The Jackal AI Bot\n")
+        message_parts.append("🧪 SIMULAZIONE GITHUB - sorveglianza intraday (NON e' il conto Pepperstone)\n")
         message_parts.extend(partial_lines)
     if closed_lines:
         if message_parts:
             message_parts.append("")
         else:
-            message_parts.append("⚡ SORVEGLIANZA INTRADAY - The Jackal AI Bot\n")
+            message_parts.append("🧪 SIMULAZIONE GITHUB - sorveglianza intraday (NON e' il conto Pepperstone)\n")
         message_parts.extend(closed_lines)
 
     if news_alerts:
