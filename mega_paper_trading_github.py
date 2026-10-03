@@ -209,7 +209,7 @@ def run_daily_check():
     open_count = sum(1 for v in positions.values() if v is not None)
 
     message_parts = [
-        "THE JACKAL AI BOT - MEGA",
+        "🧪 SIMULAZIONE GITHUB (bot Python, capitale fittizio) - NON e' il conto Pepperstone",
         f"Data: {today}",
         f"Capitale: {capital_at_start:,.2f} -> {capital:,.2f} ({(capital / NOTIONAL_CAPITAL_START - 1) * 100:+.2f}% dal via)",
         "",
