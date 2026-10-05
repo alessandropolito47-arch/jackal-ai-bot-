@@ -23,7 +23,7 @@
       "initial_risk_distance": 0.4268087874488913,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 3.5492279529571533,
+      "extreme_price": 3.5824999809265137,
       "opened_at": "2026-09-29T22:11:25.987349+00:00"
     },
     "SOL/USDT": {
@@ -47,7 +47,7 @@
       "initial_risk_distance": 0.027697398199194895,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 0.2711299955844879,
+      "extreme_price": 0.2722199857234955,
       "opened_at": "2026-09-27T20:58:13.202393+00:00"
     },
     "AVAX/USDT": null,
@@ -73,7 +73,7 @@
       "initial_risk_distance": 0.1690768461846266,
       "partial_taken": false,
       "partial_r_locked": 0.0,
-      "extreme_price": 1.1563719511032104,
+      "extreme_price": 1.1819000244140625,
       "opened_at": "2026-09-27T20:58:18.177300+00:00"
     },
     "LTC/USDT": null,
